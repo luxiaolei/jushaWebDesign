@@ -5,7 +5,192 @@
         data-ng-controller="NavCtrl"
         data-slim-scroll
         data-collapse-nav
-        data-highlight-active>
+        data-highlight-active> 
+        <!--
+        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-i18n="数据预览"></span> </a></li>
+        <li><a href="#/dashboard"> <i class="glyphicon glyphicon-list-alt"></i><span data-i18n="参数选择"></span> </a></li>
+        -->
+        <li>
+        	<a href="#/preview"> <i class="glyphicon glyphicon-upload"></i><span data-i18n="数据预览"></span> </a>
+        	<ul>
+                <div class="panel-body"><input type="file" title="导入数据" data-ui-file-upload></div>
+                <!-- <li><input type="file" title="Choose File" data-ui-file-upload></li> -->
+            </ul>
+        </li>
+        <li>
+        	<a href="#/dashboard"> <i class="glyphicon glyphicon-dashboard"></i><span data-i18n="图谱映射"></span> </a>
+        	<ul>
+				<!-- scrollable box to configure all the parameters for the mapping run -->
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<!-- <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 映射参数设置</div> -->
+						<div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-body ui-map " data-slim-scroll data-scroll-height="240px">
+											<!-- list of features -->
+											<dl class="dl-vertical">
+												<!-- <dt><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</dt> -->
+												<dd>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>特征 1</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>特征 2</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 3</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 4</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 5</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 6</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 7</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 8</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 9</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 10</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 11</span></label>
+												</dd>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- slider bar to specify the resolution and gain parameters -->
+				<!-- @media hasn't been done properly, needs to fix the css -->
+				<div class="panel-body">
+	                <div class="col-md-7">
+						<input type="text"
+							   value=""
+							   ui-range-slider
+							   data-slider-min="0"
+							   data-slider-max="100"
+							   data-slider-step="10"
+							   data-slider-orientation="horizontal"
+							   data-slider-value="30"
+							   data-slider-selection="before"
+							   data-slider-tooltip="show"
+							   data-slider-handle="round">						
+					</div>
+					<div class="col-md-5"><h10>解析度</h10></div> 					
+				</div>
+				<div class="panel-body">
+	            	<div class="col-md-7">
+						<input type="text"
+							   value=""
+							   ui-range-slider
+							   data-slider-min="0"
+							   data-slider-max="100"
+							   data-slider-step="10"
+							   data-slider-orientation="horizontal"
+							   data-slider-value="60"
+							   data-slider-selection="before"
+							   data-slider-tooltip="show"
+							   data-slider-handle="round">						
+					</div>
+					<div class="col-md-5"><h10>层次值</h10></div> 
+				</div>
+				<!-- dropdown button for filter selection -->
+				<!--
+				<a href="#/ui/buttons">
+				<div class="panel panel-default">
+					<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Button dropdowns</strong></div>
+					<div class="panel-body">
+						<div class="btn-group" dropdown is-open="status.isopen1">
+							<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled"> Action <span class="caret"></span> </button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="javascript:;">Action</a></li>
+								<li><a href="javascript:;">Another action</a></li>
+								<li><a href="javascript:;">Something else here</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				</a>
+				-->
+				<div class="panel-body">
+					<div class="btn-group" dropdown is-open="status.isopen1">
+						<button type="button" class="btn btn-default dropdown-toggle" dropdown-toggle ng-disabled="disabled"> 映射滤镜选择 <span class="caret"></span> </button>
+						<!--
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="javascript:;">Action</a></li>
+							<li><a href="javascript:;">Another action</a></li>
+							<li><a href="javascript:;">Something else here</a></li>
+						</ul>
+						-->
+					</div>
+				</div>
+				<!-- button to click and start core mapping-->
+				<div class="panel-body"><button type="button" class="btn btn-w-md btn-gap-v btn-default">映射开始</button></div>				
+            </ul>
+        </li>
+        <li>
+        	<a href="#/drillin"> <i class="glyphicon glyphicon-eye-open"></i><span data-i18n="价值探索"></span> </a>
+        	<ul>
+				<!-- scrollable box to inspect the impact of each feature -->
+				<div class="col-md-12">
+					<div class="panel panel-default">
+					<div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 特征钻取</div>
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-body ui-map " data-slim-scroll data-scroll-height="240px">
+										<!-- list of features -->
+										<dl class="dl-vertical">
+											<!-- <dt>Radio buttons</dt> -->
+											<dd>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option1" ><span>特征 1</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option2" checked><span>特征 2</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" disabled><span>特征 3</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 4</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 5</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 6</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 7</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 8</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 9</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 10</span></label>
+												<label class="ui-radio"><input name="radio1" type="radio" value="option3" ><span>特征 11</span></label>
+											</dd>
+										</dl>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+				</div>
+				<!-- histogram to show the stats of the chosen feature -->
+				<div class="col-md-12">
+					<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">Bar Charts</h3>
+					</div>
+					<div class="panel-body text-center">
+						<div data-sparkline
+							  data-data="largeChart2.data"
+							  data-options="largeChart2.options"
+							  ></div>
+					</div>
+				</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="panel-body"><button type="button" class="btn btn-n-md btn-gap-v btn-default">结果备份</button></div>
+					</div>
+					
+					<div class="col-md-4 col-md-offset-1">
+						<div class="panel-body"><button type="button" class="btn btn-n-md btn-gap-v btn-default">结果还原</button></div>
+					</div>
+				</div>
+            </ul>
+        </li>
+        <li>
+        	<a href="#/export"> <i class="glyphicon glyphicon-share-alt"></i><span data-i18n="结果分享"></span> </a>
+        	<ul>
+                <div class="panel-body"><a href="" ng-click="printInvoice()" class="btn btn-primary btn-lg btn-w-lg"><i class="fa fa-print"></i> Print</a></div>
+                <!-- <li><input type="file" title="Choose File" data-ui-file-upload></li> -->
+            </ul>
+        </li>
+        <!--
         <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-i18n="Dashboard"></span> </a></li>
         <li>
             <a href="#/ui"><i class="fa fa-magic"></i><span data-i18n="UI Kit"></span></a>
@@ -53,7 +238,7 @@
                 <li><a href="#/forms/wizard"><i class="fa fa-angle-right"></i><span data-i18n="Form Wizard"></span></a></li>
             </ul>
         </li>
-       <li>
+        <li>
             <a href="#/charts"><i class="fa fa-bar-chart-o"></i><span data-i18n="Charts"></span></a>
             <ul>
                 <li><a href="#/charts/flot"><i class="fa fa-angle-right"></i>Flot <span data-i18n="Charts"></span></a></li>
@@ -76,5 +261,6 @@
                 <li><a href="#/mail/single"><i class="fa fa-angle-right"></i><span data-i18n="Single Mail"></span></a></li>
             </ul>
         </li>
+        -->
     </ul>
 </div>
