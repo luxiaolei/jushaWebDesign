@@ -6,34 +6,58 @@
         data-slim-scroll
         data-collapse-nav
         data-highlight-active> 
-        <!--
-        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-i18n="数据预览"></span> </a></li>
-        <li><a href="#/dashboard"> <i class="glyphicon glyphicon-list-alt"></i><span data-i18n="参数选择"></span> </a></li>
-        -->
         <li>
+        	<!-- preview -->
         	<a href="#/preview"> <i class="glyphicon glyphicon-upload"></i><span data-i18n="数据预览"></span> </a>
         	<ul>
-                <div class="panel-body"><input type="file" title="导入数据" data-ui-file-upload></div>
-                <!-- <li><input type="file" title="Choose File" data-ui-file-upload></li> -->
-            </ul>
-        </li>
-        <li>
-        	<a href="#/dashboard"> <i class="glyphicon glyphicon-dashboard"></i><span data-i18n="图谱映射"></span> </a>
-        	<ul>
-				<!-- scrollable box to configure all the parameters for the mapping run -->
-				<div class="col-md-12">
-					<div class="panel panel-default">
-						<!-- <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 映射参数设置</div> -->
-						<div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</div>
-						<div class="panel-body">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="panel panel-default">
-										<div class="panel-body ui-map " data-slim-scroll data-scroll-height="240px">
+				<div class="panel-body">
+					<div class="panel-body"><input type="file" title="数据源" data-ui-file-upload></div>
+					<div class="panel-body"><button type="button" class="btn btn-w-md btn-gap-v btn-default">数据上传和预览</button></div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<!-- <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 映射参数设置</div> -->
+							<div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span> 数据降维预览</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="ui-map " data-slim-scroll data-scroll-height="100px">
 											<!-- list of features -->
 											<dl class="dl-vertical">
 												<!-- <dt><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</dt> -->
-												<dd>
+												<dl>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>K-Mean</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>Affinity</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>MeanShift</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>Spectral</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>DBSCAN</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>Agglo</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>Birch</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>OPTICS</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>PCA</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>MDS</span></label>
+												</dl>
+											</dl>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<!-- <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 映射参数设置</div> -->
+							<div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span> 滤镜和特征</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-12">
+										<div class="ui-map " data-slim-scroll data-scroll-height="100px">
+											<!-- list of features -->
+											<dl class="dl-vertical">
+												<!-- <dt><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</dt> -->
+												<dl>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>滤镜 1</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>滤镜 2</span></label>
+													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>滤镜 3</span></label>
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>特征 1</span></label>
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>特征 2</span></label>
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 3</span></label>
@@ -45,9 +69,47 @@
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 9</span></label>
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 10</span></label>
 													<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 11</span></label>
-												</dd>
+												</dl>
 											</dl>
 										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </ul>
+        </li>
+        <li>
+        	<!-- dashboard -->
+        	<a href="#/dashboard"> <i class="glyphicon glyphicon-dashboard"></i><span data-i18n="图谱映射"></span> </a>
+        	<ul>
+				<!-- scrollable box to configure all the parameters for the mapping run -->
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<!-- <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span> 映射参数设置</div> -->
+						<div class="panel-heading"><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</div>
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="ui-map " data-slim-scroll data-scroll-height="140px">
+										<!-- list of features -->
+										<dl class="dl-vertical">
+											<!-- <dt><span class="glyphicon glyphicon-list-alt"></span> 映射特征选择</dt> -->
+											<dd>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option1" ><span>特征 1</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option2" checked><span>特征 2</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 3</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 4</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 5</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 6</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 7</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 8</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 9</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 10</span></label>
+												<label class="ui-checkbox"><input name="checkbox1" type="checkbox" value="option3"><span>特征 11</span></label>
+											</dd>
+										</dl>
 									</div>
 								</div>
 							</div>
@@ -123,6 +185,7 @@
             </ul>
         </li>
         <li>
+        	<!-- drill in -->
         	<a href="#/drillin"> <i class="glyphicon glyphicon-eye-open"></i><span data-i18n="价值探索"></span> </a>
         	<ul>
 				<!-- scrollable box to inspect the impact of each feature -->
@@ -132,8 +195,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-12">
-								<div class="panel panel-default">
-									<div class="panel-body ui-map " data-slim-scroll data-scroll-height="240px">
+									<div data-slim-scroll data-scroll-height="240px">
 										<!-- list of features -->
 										<dl class="dl-vertical">
 											<!-- <dt>Radio buttons</dt> -->
@@ -153,7 +215,7 @@
 										</dl>
 									</div>
 								</div>
-							</div>
+							
 						</div>
 					</div>
 				</div>	
@@ -184,83 +246,12 @@
             </ul>
         </li>
         <li>
+        	<!-- export -->
         	<a href="#/export"> <i class="glyphicon glyphicon-share-alt"></i><span data-i18n="结果分享"></span> </a>
         	<ul>
                 <div class="panel-body"><a href="" ng-click="printInvoice()" class="btn btn-primary btn-lg btn-w-lg"><i class="fa fa-print"></i> Print</a></div>
                 <!-- <li><input type="file" title="Choose File" data-ui-file-upload></li> -->
             </ul>
         </li>
-        <!--
-        <li><a href="#/dashboard"> <i class="fa fa-dashboard"></i><span data-i18n="Dashboard"></span> </a></li>
-        <li>
-            <a href="#/ui"><i class="fa fa-magic"></i><span data-i18n="UI Kit"></span></a>
-            <ul>
-                <li><a href="#/ui/buttons"><i class="fa fa-angle-right"></i><span data-i18n="Buttons"></span></a></li>
-                <li><a href="#/ui/icons"><i class="fa fa-angle-right"></i><span data-i18n="Icons"></span></a></li>
-                <li><a href="#/ui/components"><i class="fa fa-angle-right"></i><span data-i18n="Components"></span> <span class="badge badge-danger">18</span></a></li>
-                <li><a href="#/ui/widgets"><i class="fa fa-angle-right"></i><span data-i18n="Widgets"></span> <span class="badge badge-success">14</span></a></li>
-                <li><a href="#/ui/timeline"><i class="fa fa-angle-right"></i><span data-i18n="Timeline"></span></a></li>
-                <li><a href="#/ui/nested-lists"><i class="fa fa-angle-right"></i><span data-i18n="Nested Lists"></span></a></li>
-                <li><a href="#/ui/pricing-tables"><i class="fa fa-angle-right"></i><span data-i18n="Pricing Tables"></span></a></li>
-                <li><a href="#/ui/maps"><i class="fa fa-angle-right"></i><span data-i18n="Maps"></span>  <span class="badge badge-warning">2</span></a></li>
-                <li><a href="#/ui/grids"><i class="fa fa-angle-right"></i><span data-i18n="Grids"></span></a></li>
-                <li><a href="#/ui/typography"><i class="fa fa-angle-right"></i><span data-i18n="Typography"></span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/pages"><i class="fa fa-file-text-o"></i><span data-i18n="Pages"></span></a>
-            <ul>
-                <li><a href="#/pages/signin"><i class="fa fa-angle-right"></i><span data-i18n="Sign in"></span></a></li>
-                <li><a href="#/pages/signup"><i class="fa fa-angle-right"></i><span data-i18n="Sign Up"></span></a></li>
-                <li><a href="#/pages/forgot-password"><i class="fa fa-angle-right"></i><span data-i18n="Forgot Password"></span></a></li>
-                <li><a href="#/pages/lock-screen"><i class="fa fa-angle-right"></i><span data-i18n="Lock Screen"></span></a></li>
-                <li><a href="#/pages/profile"><i class="fa fa-angle-right"></i><span data-i18n="User Profile"></span></a></li>
-                <li><a href="#/pages/404"><i class="fa fa-angle-right"></i>404 <span data-i18n="Error"></span></a></li>
-                <li><a href="#/pages/500"><i class="fa fa-angle-right"></i>500 <span data-i18n="Error"></span></a></li>
-                <li><a href="#/pages/blank"><i class="fa fa-angle-right"></i><span data-i18n="Blank Page"></span></a></li>
-                <li><a href="#/pages/invoice"><i class="fa fa-angle-right"></i><span data-i18n="Invoice"></span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/table"><i class="fa fa-table"></i><span data-i18n="Tables"></span></a>
-            <ul>
-                <li><a href="#/tables/static"><i class="fa fa-angle-right"></i><span data-i18n="Static Tables"></span></a></li>
-                <li><a href="#/tables/responsive"><i class="fa fa-angle-right"></i><span data-i18n="Responsive Tables"></span> <span class="badge badge-info">2</span></a></li>
-                <li><a href="#/tables/dynamic"><i class="fa fa-angle-right"></i><span data-i18n="Dynamic Tables"></span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/form"><i class="fa fa-pencil"></i><span data-i18n="Forms"></span></a>
-            <ul>
-                <li><a href="#/forms/layouts"><i class="fa fa-angle-right"></i><span data-i18n="Form Layouts"></span></a></li>
-                <li><a href="#/forms/elements"><i class="fa fa-angle-right"></i><span data-i18n="Form Elements"></span> <span class="badge badge-warning">14</span></a></li>
-                <li><a href="#/forms/validation"><i class="fa fa-angle-right"></i><span data-i18n="Form Validation"></span></a></li>
-                <li><a href="#/forms/wizard"><i class="fa fa-angle-right"></i><span data-i18n="Form Wizard"></span></a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#/charts"><i class="fa fa-bar-chart-o"></i><span data-i18n="Charts"></span></a>
-            <ul>
-                <li><a href="#/charts/flot"><i class="fa fa-angle-right"></i>Flot <span data-i18n="Charts"></span></a></li>
-                <li><a href="#/charts/morris"><i class="fa fa-angle-right"></i>Morris <span data-i18n="Charts"></span></a></li>
-                <li><a href="#/charts/charts"><i class="fa fa-angle-right"></i>Other <span data-i18n="Charts"></span></a></li>
-            </ul>
-        </li>
-        <li class="nav-task">
-            <a href="#/tasks/tasks">
-                <i class="fa fa-tasks"></i><span data-i18n="Tasks"></span>
-                <span class="badge badge-danger main-badge"
-                      data-ng-show="taskRemainingCount > 0">{{taskRemainingCount}}</span>
-            </a>
-        </li>
-        <li>
-            <a href="#/mail"><i class="fa fa-envelope-o"></i><span data-i18n="Mail"></span></a>
-            <ul>
-                <li><a href="#/mail/inbox"><i class="fa fa-angle-right"></i><span data-i18n="Inbox"></span></a></li>
-                <li><a href="#/mail/compose"><i class="fa fa-angle-right"></i><span data-i18n="Compose"></span></a></li>
-                <li><a href="#/mail/single"><i class="fa fa-angle-right"></i><span data-i18n="Single Mail"></span></a></li>
-            </ul>
-        </li>
-        -->
     </ul>
 </div>
